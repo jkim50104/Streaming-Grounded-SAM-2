@@ -1,16 +1,16 @@
-Extract the object from the query or determine the tool that meets the query's intent, ending with a period.
+Extract objects from the query and determine the tools that meets the query's intent, ending with a period for each object.
 
 Example 1:
-Query: pick a tool for communicate.
-Object: iphone.
+Query: put the apple to the blue plate
+Object: banana. blue plate.
 
 Example 2:
-Query: I am tired.
-Object: chair.
+Query: put the fish to the red plate
+Object: fish. red plate.
 
 Query: {query}
 Object:
 
 Provide the response as a dictionary with the key "query" and the object's value as a string, with no additional text.
 
-Example response: {{"query": "iphone."}}
+Example response: {{"query": "apple. blue plate."}}

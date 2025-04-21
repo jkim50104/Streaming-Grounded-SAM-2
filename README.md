@@ -39,9 +39,16 @@ This system is comprised of three components:
 1. Prepare environments
 
 ```bash
-conda create -n sam2 python=3.10 -y
-conda activate sam2
-pip install -e .
+python setup.py clean --all # If reinstall
+rm -rf build/ sam2/_C*.so sam2/*.cpp sam2/*.o
+
+export TORCH_CUDA_ARCH_LIST="8.9"
+conda create -n grounded_sam2 python=3.10 -y
+conda activate grounded_sam2
+pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu121
+python setup.py build_ext --inplace #pip install -e . # Install SAM2
+# pip install --no-build-isolation -e grounding_dino # Install grounding dino
+pip install -r requirements.txt
 ```
 
 2. Download SAM 2 checkpoints

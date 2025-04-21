@@ -15,7 +15,7 @@ class Qwen2():
         self.device = device
 
     @torch.no_grad()
-    async def generate(self, query):
+    def generate(self, query):
 
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},

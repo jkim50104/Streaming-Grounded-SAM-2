@@ -11,4 +11,12 @@ outputs/*
 checkpoints/*.pt
 gdino_checkpoints/*.pth
 gdino_checkpoints/grounding-dino*
-llm_checkpoints/Qwen2*
+llm_checkpoints/Qwen/*
+
+
+*.gif
+*.mp4
+notebooks/images
+notebooks/videos
+grounding_dino/.asset
+grounding_dino/demo
