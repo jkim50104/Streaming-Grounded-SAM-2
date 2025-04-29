@@ -9,4 +9,4 @@ hydra-core
 
 # Qwen
 accelerate
-autoawq
+#autoawq

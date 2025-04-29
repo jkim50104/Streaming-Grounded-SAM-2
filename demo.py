@@ -6,7 +6,6 @@ import cv2
 import imageio
 from PIL import Image
 import ast
-import asyncio
 import time
 import collections
 import argparse
@@ -63,7 +62,7 @@ def load_model(model, use_llm=False):
 
     return grounding_processor, grounding_model, predictor, llm
 
-async def main(model="gpt-4o-2024-05-13", use_llm=False):
+def main(model="gpt-4o-2024-05-13", use_llm=False):
     
     # load model
     grounding_processor, grounding_model, predictor, llm = load_model(model, use_llm)
@@ -205,4 +204,4 @@ if __name__ == '__main__':
     parser.add_argument('--model', default="Qwen/Qwen2.5-7B-Instruct", type=str, required=False, help='The llm to use for the system.')
     args = parser.parse_args()
     
-    asyncio.run(main(args.model, use_llm=True))
+    main(args.model, use_llm=True)
